@@ -5,9 +5,8 @@ import axios from "axios";
 
 const Navbar = () => {
   return (
-    <nav className="bg-white p-4 flex justify-between items-center shadow-md border-b">
-      <div className="flex items-center space-x-2">
-        <img src="/logo.png" alt="Jurnal POLRI" className="w-8 h-8" />
+    <nav className="bg-white p-4 shadow-md border-b">
+      <div className="max-w-5xl mx-auto flex justify-start items-center pr-15">
         <h1 className="text-lg font-bold text-gray-800">JURNAL POLRI</h1>
       </div>
     </nav>
@@ -75,7 +74,7 @@ export default function Dashboard() {
                     <p className="text-sm text-gray-600 mt-3 flex-grow">{news.description}</p>
                     <button 
                       onClick={() => handleReadMore(news.id)}
-                      className="mt-5 w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition"
+                      className="mt-5 w-full bg-success-600 text-white p-3 rounded-lg hover:bg-success-700 transition"
                     >
                       Selengkapnya
                     </button>
