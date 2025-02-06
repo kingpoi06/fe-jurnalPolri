@@ -5,7 +5,7 @@ import axios from "axios";
 const Navbar = () => {
   return (
     <nav className="bg-white p-4 shadow-md border-b">
-      <div className="max-w-5xl mx-auto flex justify-start items-center pr-15">
+      <div className="max-w-5xl mx-auto flex justify-center sm:justify-start items-center px-4">
         <h1 className="text-lg font-bold text-gray-800">JURNAL POLRI</h1>
       </div>
     </nav>
@@ -31,7 +31,6 @@ export default function NewsDetail() {
         setLoading(false);
       }
     };
-
     fetchNews();
   }, [id]);
 
@@ -46,10 +45,10 @@ export default function NewsDetail() {
   return (
     <div>
       <Navbar />
-      <div className="min-h-screen bg-gray-100 p-10">
-        <div className="max-w-5xl mx-auto bg-white p-6 rounded-lg shadow-lg flex space-x-6">
-          <div className="w-2/3">
-            <h1 className="text-3xl font-bold mb-2">{article.title}</h1>
+      <div className="min-h-screen bg-gray-100 p-6 md:p-10">
+        <div className="max-w-5xl mx-auto bg-white p-6 rounded-lg shadow-lg flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6">
+          <div className="w-full md:w-2/3">
+            <h1 className="text-2xl md:text-3xl font-bold mb-2">{article.title}</h1>
             <p className="text-gray-500 mb-4">
               <strong>{article.date}</strong> | <span>{article.author}</span>
             </p>
@@ -62,10 +61,10 @@ export default function NewsDetail() {
           </div>
 
           {/* BERITA LAINNYA */}
-          <div className="w-1/3">
+          <div className="w-full md:w-1/3">
             <h2 className="text-lg font-bold mb-4">Berita Lainnya</h2>
             {newsData
-              .filter((n) => n.id.toString() !== id) // Pastikan tidak menampilkan berita yang sedang dibuka
+              .filter((n) => n.id.toString() !== id)
               .map((news) => (
                 <Link to={`/news/${news.id}`} key={news.id}>
                   <div className="mb-4 flex space-x-4 items-center hover:bg-gray-100 p-2 rounded-lg transition">
