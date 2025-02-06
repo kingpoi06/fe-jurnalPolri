@@ -22,7 +22,7 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await axios.get("/news");
+        const response = await axios.get("https://api-jurnalpolri.onrender.com/news");
         setNewsData(response.data);
       } catch (error) {
         console.error("Error fetching news data:", error);

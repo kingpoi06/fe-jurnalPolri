@@ -6,8 +6,8 @@ const useAxios = () => {
   const navigate = useNavigate();
   const axiosInstance = useRef(
     axios.create({
-      baseURL: "http://localhost:5000",
-      // baseURL: "https://api-geoheritage.onrender.com",
+      // baseURL: "http://localhost:5000",
+      baseURL: "https://api-jurnalpolri.onrender.com",
       withCredentials: true,
     })
   ).current;
